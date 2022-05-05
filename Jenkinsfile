@@ -203,7 +203,6 @@ spec:
         stash includes: 'coverage/coverage.xml', name: 'cobertura-report'
       }
     }
-*/
 
 
     //SonarQube goes here
