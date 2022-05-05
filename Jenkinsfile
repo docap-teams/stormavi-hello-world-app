@@ -332,7 +332,7 @@ spec:
           sh "git clone https://$GIT_CREDS_PSW@github.com/docap-teams/stormavi-hello-world-deployment.git"
           sh "git config --global user.email 'ci@ci.com'"
           
-          dir("hello-world-deployment") {
+          dir("stormavi-hello-world-deployment") {
             //update the image to be the current build number from Jenkins
             sh "cd test && kustomize edit set image quay.io/smidigstorm/avi-hello-world-app:${env.BUILD_ID}"
             //and save it (or print "no changes")
