@@ -1,6 +1,6 @@
-// Replace all occurences of [your_quay_account] with your actual quay.io account.
+// Replace all occurences of smidigstorm with your actual quay.io account.
 // Tip: use Replace, you find this in the menu under Edit -> Replace. 
-// Replace [prefix] with the prefix you used for creating your hello-world-app repository.
+// Replace stormavi with the prefix you used for creating your hello-world-app repository.
 
 pipeline {
   agent none
@@ -12,7 +12,6 @@ pipeline {
 
   stages {
 // REMOVE THE COMMENT START (THE NEXT LINE)
-/*
   //Build goes here
     stage('Build') {
       agent {
@@ -40,7 +39,7 @@ spec:
     projected:
       sources:
       - secret:
-          name: [your_quay_account]-docap-pull-secret
+          name: smidigstorm-docap-pull-secret
           items:
             - key: .dockerconfigjson
               path: config.json
@@ -52,12 +51,11 @@ spec:
         script {
           //write the version number to a file which gets copied into the container
           sh 'echo $BUILD_ID > VERSION.txt'
-          sh "/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination=quay.io/[your_quay_account]/hello-world-app:${env.BUILD_ID}"
+          sh "/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination=quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}"
         } //container
       } //steps
     } //stage(build)
 // REMOVE THE COMMENT END (THE NEXT LINE)
-*/
 
 /*
     //Test goes here
@@ -76,7 +74,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/[your_quay_account]/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -104,7 +102,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/[your_quay_account]/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -141,7 +139,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/[your_quay_account]/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -181,7 +179,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/[your_quay_account]/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -267,7 +265,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/[your_quay_account]/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -332,7 +330,7 @@ spec:
           
           dir("hello-world-deployment") {
             //update the image to be the current build number from Jenkins
-            sh "cd prod && kustomize edit set image quay.io/[your_quay_account]/hello-world-app:${env.BUILD_ID}"
+            sh "cd prod && kustomize edit set image quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}"
             //and save it (or print "no changes")
             sh "git commit -am 'Publish new version' && git push || echo 'no changes'"
           }
