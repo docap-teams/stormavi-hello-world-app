@@ -114,7 +114,6 @@ spec:
       steps {
         sh 'py.test --disable-pytest-warnings --junitxml xunit-result-functional.xml --cov=. --cov-config .coveragerc --cov-append functionaltest.py'
       }
-/
       //Tell Jenkins about the test report
       post {
         always {
