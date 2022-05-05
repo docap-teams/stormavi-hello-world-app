@@ -291,7 +291,7 @@ spec:
     }
 */
 
-/*
+
     //Deploy goes here
     stage('Deploy to Production') {
 
@@ -337,7 +337,6 @@ spec:
         }
       }
     }
-*/
 
   } //stages
 } //pipeline
