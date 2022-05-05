@@ -57,7 +57,7 @@ spec:
     } //stage(build)
 // REMOVE THE COMMENT END (THE NEXT LINE)
 
-/*
+
     //Test goes here
     stage('Test') {
       parallel {
@@ -164,9 +164,7 @@ spec:
   } //parallel
 } //stage(test)
 
-*/
 
-/*
     //Coverage goes here
     stage('Coverage') {
       agent {
@@ -208,7 +206,7 @@ spec:
     }
 */
 
-/*
+
     //SonarQube goes here
     stage('Sonarqube') {
       agent {
@@ -250,9 +248,7 @@ spec:
         }
       }
     }
-*/
 
-/*
     //Documentation generation goes here
     stage('Documentation') {
       agent {
