@@ -283,8 +283,6 @@ spec:
         ]
       }
     }
-*/
-
 
     //Deploy goes here
     stage('Deploy to Production') {
