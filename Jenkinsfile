@@ -51,7 +51,7 @@ spec:
         script {
           //write the version number to a file which gets copied into the container
           sh 'echo $BUILD_ID > VERSION.txt'
-          sh "/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination=quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}"
+          sh "/kaniko/executor --dockerfile `pwd`/Dockerfile --context `pwd` --destination=quay.io/smidigstorm/avi-hello-world-app:${env.BUILD_ID}"
         } //container
       } //steps
     } //stage(build)
