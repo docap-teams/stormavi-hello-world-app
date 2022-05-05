@@ -74,7 +74,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/avi-hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -102,7 +102,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/avi-hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -139,7 +139,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/avi-hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -179,7 +179,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/avi-hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -265,7 +265,7 @@ metadata:
 spec:
   containers:
   - name: appy
-    image: quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}
+    image: quay.io/smidigstorm/avi-hello-world-app:${env.BUILD_ID}
     imagePullPolicy: IfNotPresent
     command:
     - cat
@@ -330,7 +330,7 @@ spec:
           
           dir("hello-world-deployment") {
             //update the image to be the current build number from Jenkins
-            sh "cd prod && kustomize edit set image quay.io/smidigstorm/hello-world-app:${env.BUILD_ID}"
+            sh "cd prod && kustomize edit set image quay.io/smidigstorm/avi-hello-world-app:${env.BUILD_ID}"
             //and save it (or print "no changes")
             sh "git commit -am 'Publish new version' && git push || echo 'no changes'"
           }
