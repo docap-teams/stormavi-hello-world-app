@@ -204,7 +204,7 @@ spec:
       }
     }
 
-
+/*
     //SonarQube goes here
     stage('Sonarqube') {
       agent {
@@ -283,6 +283,7 @@ spec:
         ]
       }
     }
+*/
 
     //Deploy goes here
     stage('Deploy to Production') {
