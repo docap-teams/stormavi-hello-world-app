@@ -114,7 +114,7 @@ spec:
       steps {
         sh 'py.test --disable-pytest-warnings --junitxml xunit-result-functional.xml --cov=. --cov-config .coveragerc --cov-append functionaltest.py'
       }
-
+/
       //Tell Jenkins about the test report
       post {
         always {
@@ -294,10 +294,6 @@ spec:
 
     //Deploy goes here
     stage('Deploy to Production') {
-      input {
-  message "Should we deploy?"
-  ok "Yes, please, that'd be really good"
-}
 
       environment {
         //put your credential identifier below in single quotes ''
