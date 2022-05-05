@@ -325,7 +325,7 @@ spec:
 
           //get the GitOps repository - you're going to need to change [teams] to your team name.          
           // GIT_CREDS_PSW is the app token. 
-          sh "git clone https://$GIT_CREDS_PSW@github.com/docap-teams/[team]-hello-world-deployment.git"
+          sh "git clone https://$GIT_CREDS_PSW@github.com/docap-teams/stormavi-hello-world-deployment.git"
           sh "git config --global user.email 'ci@ci.com'"
           
           dir("hello-world-deployment") {
